@@ -303,7 +303,7 @@ setup_config() {
 {
   "bot": {
     "name": "꧁༺ 𝓢𝓸𝓯𝓲𝔂𝓪 ༻꧂",
-    "prefix": ".",
+    "prefix": "#",
     "ownerNumber": "79XXXXXXXXX",
     "maxGroups": 20,
     "autoRestart": true,
