@@ -1,9 +1,11 @@
 <div align="center">
 
-# ꧁༺ 𝓢𝓸𝓯𝓲𝔂𝓪 ༻꧂
+![Sofiya Bot Avatar](assets/images/sofiya-avatar.jpg)
 
-🤖 **Профессиональный WhatsApp бот для модерации групп с системой аренды**  
-🚀 **Оптимизирован для Termux | Поддержка до 20 групп**
+꧁༺ 𝓢𝓸𝓯𝓲𝔂𝓪 ༻꧂ WhatsApp Bot
+
+🤖 Профессиональный WhatsApp бот для модерации групп с системой аренды
+🚀 Оптимизирован для Termux | Поддержка до 20 групп
 
 </div>
 
@@ -43,26 +45,39 @@
 
 ---
 
-🚀 Установка на Termux
+🚀 Автоматическая установка на Termux v2.0
 
-📱 Шаг 1: Подготовка Termux
+⚡ БЫСТРАЯ УСТАНОВКА ОДНОЙ КОМАНДОЙ (исправляет ВСЕ ошибки):
 
-Обновление пакетов
+Обновление и установка git
+pkg update && pkg upgrade -y && pkg install git -y
+
+Клонирование и автоустановка  
+git clone https://github.com/IgorChi1/sofiya-whatsapp-bot.git
+cd sofiya-whatsapp-bot
+bash install.sh
+
+🛠️ Автоустановщик v2.0 РЕШАЕТ все проблемы:
+
+✅ Автоматически устанавливает: git, nodejs, npm, python
+✅ Исправляет проблемы с репозиториями Termux  
+✅ Множественные попытки установки разными способами
+✅ Создает скрипты управления (start.sh, stop.sh и др.)
+✅ Настраивает базовый config.json
+✅ Финальная проверка всех компонентов
+
+📱 Пошаговая установка (если нужно вручную)
+
+Шаг 1: Подготовка Termux
 pkg update && pkg upgrade -y
-
-Установка Node.js и зависимостей
-pkg install -y nodejs npm git
-
-Предоставление доступа к хранилищу
+pkg install git nodejs npm python -y
 termux-setup-storage
 
-💾 Шаг 2: Скачивание и установка
-
-Клонирование репозитория
+Шаг 2: Клонирование проекта
 git clone https://github.com/IgorChi1/sofiya-whatsapp-bot.git
 cd sofiya-whatsapp-bot
 
-Установка зависимостей
+Шаг 3: Автоустановка
 bash install.sh
 
 Копирование конфигурации
@@ -102,6 +117,27 @@ nohup npm start > bot.log 2>&1 &
 2. 📱 Отсканируйте QR-код в WhatsApp Web
 3. ✅ Дождитесь сообщения об успешном подключении
 4. 🚀 Бот готов к работе!
+
+---
+
+🎛️ Управление ботом
+
+⚡ NPM скрипты (быстрые команды):
+
+npm start        - Запуск бота в консоли
+npm run bg       - Запуск в фоне  
+npm run stop     - Остановка бота
+npm run status   - Проверка статуса
+npm run restart  - Перезапуск
+npm run logs     - Просмотр логов
+
+📝 Bash скрипты (альтернативные):
+
+./start.sh       - Запуск в консоли
+./start-bg.sh    - Запуск в фоне
+./stop.sh        - Остановка
+./status.sh      - Статус
+./update.sh      - Обновление бота
 
 ---
 

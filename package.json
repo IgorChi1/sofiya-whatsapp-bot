@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
+    "dev": "nodemon index.js", 
+    "bg": "nohup node index.js > bot.log 2>&1 &",
+    "stop": "pkill -f 'node index.js' || echo 'Bot not running'",
+    "status": "pgrep -f 'node index.js' && echo 'Bot is running' || echo 'Bot not running'",
+    "restart": "npm run stop && sleep 2 && npm start",
+    "logs": "tail -f bot.log",
+    "install-termux": "bash install.sh",
     "test": "node test.js"
   },
   "dependencies": {
