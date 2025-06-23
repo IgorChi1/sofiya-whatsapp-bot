@@ -108,7 +108,10 @@ class SofiyaBot {
             markOnlineOnConnect: false,
             maxMsgRetryCount: 2,
             msgRetryCounterMap: {},
-            retryRequestDelayMs: 5000
+            retryRequestDelayMs: 5000,
+            syncFullHistory: false, // Отключаем синхронизацию истории
+            shouldSyncHistoryMessage: () => false, // Не синхронизировать историю
+            getMessage: async () => undefined // Не загружать старые сообщения
         });
     }
 
