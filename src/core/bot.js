@@ -344,13 +344,33 @@ class SofiyaBot {
      * Проверка доступа к группе
      */
     hasGroupAccess(groupId) {
-        // Владелец имеет доступ везде
-        if (groupId.includes(this.config.bot.ownerNumber)) {
+        // Проверка активной аренды
+        if (this.database.isRentalActive(groupId)) {
             return true;
         }
         
-        // Проверка активной аренды
-        return this.database.isRentalActive(groupId);
+        // Тестовый период для новых групп (72 часа)
+        const groupData = this.database.getGroup(groupId);
+        if (groupData && groupData.joinDate) {
+            const joinTime = moment(groupData.joinDate);
+            const hoursSinceJoin = moment().diff(joinTime, 'hours');
+            
+            if (hoursSinceJoin <= this.config.rental.defaultTrial) {
+                return true;
+            }
+        }
+        
+        // Новые группы без данных - дать тестовый период
+        if (!groupData) {
+            // Сохраняем время присоединения
+            this.database.setGroup(groupId, {
+                joinDate: moment().toISOString(),
+                trialStarted: true
+            });
+            return true;
+        }
+        
+        return false;
     }
 
     /**

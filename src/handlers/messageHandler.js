@@ -131,7 +131,7 @@ class MessageHandler {
      */
     async handleNoAccess(messageInfo) {
         // Показать сообщение только на команды аренды
-        if (messageInfo.text.startsWith('.аренда') || messageInfo.text.startsWith('.чекаренды')) {
+        if (messageInfo.text.startsWith('#аренда') || messageInfo.text.startsWith('#чекаренды')) {
             const rentalInfo = this.generateRentalInfo();
             await this.bot.sendMessage(messageInfo.chatId, rentalInfo);
             
