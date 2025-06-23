@@ -273,7 +273,7 @@ class SofiyaBot {
      */
     async notifyExpiringRental(rental) {
         const timeLeft = moment(rental.endDate).fromNow();
-        const message = `⚠️ Внимание!\n\nАренда бота в этой группе истекает ${timeLeft}.\n\nДля продления используйте команду .аренда`;
+        const message = `⚠️ Внимание!\n\nАренда бота в этой группе истекает ${timeLeft}.\n\nДля продления используйте команду #аренда`;
         
         await this.sendMessage(rental.groupId, message);
     }

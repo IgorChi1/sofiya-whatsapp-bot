@@ -142,7 +142,7 @@ class EventHandler {
             const groupInfo = await this.bot.getGroupInfo(groupId);
             const groupName = groupInfo?.subject || 'группу';
 
-            const welcomeMessage = `👋 Добро пожаловать в *${groupName}*, @${participant.split('@')[0]}!\n\n🤖 Я бот ꧁༺ 𝓢𝓸𝓯𝓲𝔂𝓪 ༻꧂ - помощник по модерации группы.\n\n📋 Для получения справки используйте команду .помощь`;
+            const welcomeMessage = `👋 Добро пожаловать в *${groupName}*, @${participant.split('@')[0]}!\n\n🤖 Я бот ꧁༺ 𝓢𝓸𝓯𝓲𝔂𝓪 ༻꧂ - помощник по модерации группы.\n\n📋 Для получения справки используйте команду #помощь`;
 
             await this.bot.sendMessage(groupId, welcomeMessage, {
                 mentions: [participant]
@@ -280,7 +280,7 @@ class EventHandler {
             }
 
             // Уведомление администраторов
-            const message = `📊 *Очистка неактивных участников*\n\nНайдено ${inactiveUsers.length} неактивных участников за ${days} дней.\n\nИспользуйте команду .неактивные для просмотра списка.`;
+            const message = `📊 *Очистка неактивных участников*\n\nНайдено ${inactiveUsers.length} неактивных участников за ${days} дней.\n\nИспользуйте команду #неактивные для просмотра списка.`;
             
             await this.bot.sendMessage(groupId, message);
             
