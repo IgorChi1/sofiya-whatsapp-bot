@@ -1,7 +1,13 @@
+<div align="center">
+
+![Sofiya Bot Avatar](assets/images/sofiya-avatar.jpg)
+
 ꧁༺ 𝓢𝓸𝓯𝓲𝔂𝓪 ༻꧂ WhatsApp Bot
 
 🤖 Профессиональный WhatsApp бот для модерации групп с системой аренды
 🚀 Оптимизирован для Termux | Поддержка до 20 групп
+
+</div>
 
 ---
 
@@ -55,11 +61,11 @@ termux-setup-storage
 💾 Шаг 2: Скачивание и установка
 
 Клонирование репозитория
-git clone https://github.com/yourusername/sofiya-whatsapp-bot
+git clone https://github.com/IgorChi1/sofiya-whatsapp-bot.git
 cd sofiya-whatsapp-bot
 
 Установка зависимостей
-npm install
+bash install.sh
 
 Копирование конфигурации
 cp config.json.example config.json
