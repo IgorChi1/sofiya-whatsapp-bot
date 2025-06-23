@@ -1,0 +1,75 @@
+{
+  "bot": {
+    "name": "꧁༺ 𝓢𝓸𝓯𝓲𝔂𝓪 ༻꧂",
+    "version": "1.0.0",
+    "prefix": ".",
+    "ownerNumber": "79000000000",
+    "language": "ru"
+  },
+  "limits": {
+    "maxGroups": 20,
+    "messagesPerMinute": 30,
+    "commandsPerUser": 10,
+    "maxFileSize": 52428800,
+    "autoRestartHours": 24
+  },
+  "rental": {
+    "enabled": true,
+    "currency": "RUB",
+    "defaultTrial": 72,
+    "plans": {
+      "week": {
+        "name": "Неделя",
+        "duration": 168,
+        "price": 500
+      },
+      "month": {
+        "name": "Месяц", 
+        "duration": 720,
+        "price": 1500
+      },
+      "quarter": {
+        "name": "3 месяца",
+        "duration": 2160,
+        "price": 4000
+      },
+      "year": {
+        "name": "Год",
+        "duration": 8760,
+        "price": 12000
+      }
+    }
+  },
+  "features": {
+    "antiSpam": {
+      "antiLink": true,
+      "antiLink2": true,
+      "antiCall": true,
+      "antiPrivate": true,
+      "antiDelete": true
+    },
+    "moderation": {
+      "autoAdmin": true,
+      "welcome": true,
+      "restrict": true,
+      "autoRead": true,
+      "activityCheck": true
+    },
+    "analytics": {
+      "enabled": true,
+      "inactiveThreshold": 7,
+      "silentThreshold": 30
+    }
+  },
+  "database": {
+    "autoBackup": true,
+    "backupInterval": 6,
+    "cleanupDays": 30
+  },
+  "security": {
+    "rateLimiting": true,
+    "spamThreshold": 5,
+    "bannedWords": ["спам", "реклама"],
+    "trustedUsers": []
+  }
+} 
