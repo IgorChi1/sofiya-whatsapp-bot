@@ -344,6 +344,11 @@ class SofiyaBot {
      * Проверка доступа к группе
      */
     hasGroupAccess(groupId) {
+        // Если система аренды отключена - доступ для всех
+        if (!this.config.rental.enabled) {
+            return true;
+        }
+        
         // Проверка активной аренды
         if (this.database.isRentalActive(groupId)) {
             return true;

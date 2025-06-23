@@ -14,7 +14,7 @@
     "autoRestartHours": 24
   },
   "rental": {
-    "enabled": true,
+    "enabled": false,
     "currency": "RUB",
     "defaultTrial": 72,
     "plans": {
